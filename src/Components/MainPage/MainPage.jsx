@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Header from './Sections/Header';
 import StartBoard from './Sections/StartBoard';
+import Modal from '../commons/Modal';
+import { useDispatch, useSelector } from 'react-redux'
 
 const Container = styled.div`
   width: 1200px;
@@ -28,6 +30,8 @@ const Welcome = styled.div`
 `
 
 const MainPage = ({ children }) => {
+  const modal = useSelector((state) => state.modal);
+  console.log(modal.modal);
 
   return (
     <>
@@ -40,6 +44,7 @@ const MainPage = ({ children }) => {
         <Layout>
           <StartBoard />
         </Layout>
+        {modal.modal && <Modal />}
       </Container>
     </>
   );
