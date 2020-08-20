@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
       }
       body{
         background-color: #f7f8fa;
-        font-family: 'Montserrat', 'Noto-sans', sans-serif;
+        font-family: 'Montserrat', 'Noto Sans', sans-serif;
         font-size: 1.2rem;
         font-weight: 400;
         color: #333;
