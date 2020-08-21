@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../../commons/Button';
-import { useDispatch } from 'react-redux'
-import { showModal } from '../../../module/modal';
+import { useDispatch, useSelector } from 'react-redux'
+import { showModal } from '../../../module/challenge';
 
 const Board = styled.div`
   width: 32%;
@@ -30,20 +30,19 @@ const Board = styled.div`
 
 function StartBoard() {
   const dispatch = useDispatch();
-  
+
   const onClickStart = () => {
     dispatch(showModal());
   }
-
   return (
     <Board>
-      <h3>Challenge</h3>
-      <div>
-        <em style={{ fontSize: "3rem"}}>&#128581;</em>
-        <p>아직 진행중인 도전이 없습니다.</p>
-          <Button onClick={onClickStart} title="도전 시작" />
-      </div>
-    </Board>
+    <h3>Challenge</h3>
+    <div>
+      <em style={{ fontSize: "3rem"}}>&#128581;</em>
+      <p>아직 진행중인 도전이 없습니다.</p>
+        <Button onClick={onClickStart} title="도전 시작" />
+    </div>
+  </Board>
   )
 }
 

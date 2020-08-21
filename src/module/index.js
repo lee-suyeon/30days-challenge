@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import modal from './modal';
+import challenge from './challenge';
 
 const rootReducer = combineReducers({
-  modal,
+  challenge,
 })
 
 export default rootReducer;

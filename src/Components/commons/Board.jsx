@@ -6,7 +6,7 @@ const BaseBoard = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
-  height: 350px;
+  height: 380px;
   background: #fff;
   padding: 2rem;
 `

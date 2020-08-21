@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 const typeStyle = css`
   ${props =>
-    props.type === 'primary' &&
+    props.color === 'primary' &&
     css`
       background-color: #4d55ff;
       color: #fff;

@@ -24,7 +24,6 @@ const ProgressBar = styled.div`
     font-size: 0.9rem;
     font-weight: 500;
   }
-
 `
 
 const Complate = styled.div`
