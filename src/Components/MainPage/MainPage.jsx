@@ -9,6 +9,9 @@ const Layout = styled.div`
 `;
 
 const MainPage = ({ children }) => {
+  const challenge = JSON.parse(localStorage.getItem("challenge"));
+  const { goal, startDate, endDate, reward } = challenge;
+
   return (
     <div className='main-page'>
       <Layout>

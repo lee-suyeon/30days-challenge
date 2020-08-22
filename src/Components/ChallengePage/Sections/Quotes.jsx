@@ -39,7 +39,7 @@ function Quotes() {
 
   return (
     <div style={{ width: '32%', marginTop: '1.5rem' }}>
-      <Board title="명언">
+      <Board title='오늘의 명언'>
         <QuoteCont>
           <p>{quote.quote}</p>
           <em>- {quote.author} -</em>
