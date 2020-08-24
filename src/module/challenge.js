@@ -3,7 +3,6 @@ import initialState from './store/initialState'
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const START_CHALLENGE = 'START_CHALLENGE';
-export const CLICK_CELL = 'CLICK_CELL';
 
 // 액션 생성 함수
 export const showModal = () => {
@@ -23,17 +22,8 @@ export const startChallenge = (challengeInfo) => {
   }
 }
 
-export const clickCell = (checked) => {
-  return {
-    type: CLICK_CELL,
-    payload : {
-      checked
-    }
-  }
-}
-
 // reducer 선언
-export default function challenge (state = initialState, action){
+export default function challenge (state = [], action){
   switch(action.type){
     case SHOW_MODAL: 
       return {
@@ -49,11 +39,6 @@ export default function challenge (state = initialState, action){
       return {
         ...state,
         challengeInfo: action.challengeInfo
-      }
-    case CLICK_CELL: 
-      return {
-        ...state,
-        checked: action.payload.checked
       }
     default:
       return state;

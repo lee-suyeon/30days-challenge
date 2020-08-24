@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components';
 import Board from '../../commons/Board';
+import { useDispatch, useSelector } from 'react-redux';
 import Cell from './Cell';
 
 const CellTable = styled.div`
@@ -25,6 +26,8 @@ const Result = styled.p`
 const checkNumbers = Array(30).fill().map((v, i) => i + 1);
 
 function CheckBox() {
+  const check = useSelector(state => state.check);
+  const count = check.length;
 
   return (
     <div style={{ width: '32%' }}>
@@ -34,7 +37,7 @@ function CheckBox() {
         <CellTable>
           {checkNumbers.map((day, i) => <Cell key={`day${i + 1}`} day={day}></Cell>)}
         </CellTable>
-        <Result><em>0</em> / 30</Result>
+        <Result><em>{count < 10 ? `0${count}` : count}</em> / 30</Result>
       </Board>
     </div>
   )
