@@ -1,18 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
-import StartBoard from './Sections/StartBoard';
-
-const Layout = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
+import { useDispatch, useSelector } from 'react-redux'
+import { showModal } from '../../module/challenge';
+import NoChallenge from './Sections/NoChallenge';
+import OnGoing from './Sections/OnGoing';
 
 const MainPage = () => {
+  const dispatch = useDispatch();
+
+  const challengeInfo = useSelector(state => state.challenge.challengeInfo);
+  const { category, goal, startDate, endDate, reward } = challengeInfo;
+
+  const onClickStart = () => dispatch(showModal());
+
   return (
-    <div className='main-page'>
-      <Layout>
-        <StartBoard />
-      </Layout>
+    <div className="main-page" 
+      style={{ display: 'flex', justifyContent: 'space-between'}}>
+      {challengeInfo 
+      ? <OnGoing
+          category={category}
+          goal={goal}
+          startDate={startDate}
+          endDate={endDate}
+          reward={reward}
+        />
+      : <NoChallenge 
+        onClick={onClickStart}
+        />}
     </div>
   );
 }
