@@ -1,5 +1,3 @@
-import initialState from './store/initialState'
-
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const START_CHALLENGE = 'START_CHALLENGE';
@@ -17,13 +15,21 @@ let nextId = 1;
 export const startChallenge = (challengeInfo) => {
   return {
     type: START_CHALLENGE,
-    id: nextId++,
-    challengeInfo,
+    payload : {
+      id: nextId++,
+      ...challengeInfo,
+    }
   }
 }
 
+// 초기 상태
+const initialState = {
+  modal: false,
+  challengeInfo: [],
+};
+
 // reducer 선언
-export default function challenge (state = [], action){
+export default function challenge (state = initialState, action){
   switch(action.type){
     case SHOW_MODAL: 
       return {
@@ -38,7 +44,7 @@ export default function challenge (state = [], action){
     case START_CHALLENGE: 
       return {
         ...state,
-        challengeInfo: action.challengeInfo
+        challengeInfo: action.payload,
       }
     default:
       return state;
