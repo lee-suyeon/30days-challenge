@@ -1,16 +1,13 @@
-import initialState from './store/initialState'
-
 export const POST_COMMENT = 'POST_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 
 // 액션 생성 함수
 let commentId = 1;
-export const postComment = (emoji, comment) => {
+export const postComment = (content) => {
   return { type: POST_COMMENT,
     payload : {
       id: commentId++,
-      emoji,
-      comment,
+      ...content,
     }
   }
 }
@@ -23,7 +20,7 @@ export const deleteComment = (id) => {
 }
 
 // reducer 선언
-export default function challenges (state = initialState.comments, action){
+export default function comments (state = [], action){
   switch(action.type){
     case POST_COMMENT: 
       return state.concat(action.payload);
