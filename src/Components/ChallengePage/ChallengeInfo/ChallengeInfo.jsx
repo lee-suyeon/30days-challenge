@@ -1,12 +1,10 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
+import React  from 'react'
 import styled from 'styled-components';
 import { Flag } from '@styled-icons/material/Flag'
 import { CalendarToday } from '@styled-icons/material/CalendarToday'
 import { EmojiEvents } from '@styled-icons/material/EmojiEvents'
 import Button from '../../commons/Button';
 import Board from '../../commons/Board';
-import { showModal } from '../../../module/challenge';
 
 const InfoList = styled.li`
   margin-bottom: 1.1rem;
@@ -29,18 +27,11 @@ const InfoList = styled.li`
   }
 `
 
-function ChallengeInfo() {
-  const dispatch = useDispatch();
-  const challenge = JSON.parse(localStorage.getItem("challenge"));
-  const { goal, startDate, endDate, reward } = challenge;
-
-  const onClickEdit = () => {
-    console.log('click')
-    dispatch(showModal());
-  }
+function ChallengeInfo({ challengeInfo, onEditChallenge }) {
+  const { goal, startDate, endDate, reward } = challengeInfo;
 
   return (
-    <div style={{ width: '32%'}}>
+    <div style={{ width: '32%', postion: 'relative'}}>
       <Board title='도전 내용'>
         <ul style={{ marginTop: '1.5rem' }}>
           <InfoList>
@@ -49,14 +40,16 @@ function ChallengeInfo() {
           </InfoList>
           <InfoList>
             <em>기간</em>
-            <p><span><CalendarToday style={{ width: '22px'}}/></span>{startDate} - {endDate}</p>
+            <p><span><CalendarToday style={{ width: '22px'}}/></span>{startDate} ~ {endDate}</p>
           </InfoList>
           <InfoList>
             <em>보상</em>
             <p><span><EmojiEvents/></span>{reward} </p>
           </InfoList>
         </ul>
-        <Button title='EDIT' onClick={onClickEdit}></Button>
+        <div style={{ textAlign: 'right' }}>
+          <Button title='수정' width="25%" onClick={onEditChallenge}></Button>
+        </div>
       </Board>
     </div>
   )
