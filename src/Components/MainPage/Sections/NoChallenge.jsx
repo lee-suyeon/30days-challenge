@@ -13,7 +13,8 @@ export const Challenge = styled.div`
   color: #555;
 
   span{
-    font-size: 3.5rem;
+    font-size: 3rem;
+    margin-top: 2.5rem;
   }
   em {
     font-size: 1.5rem;
@@ -29,8 +30,8 @@ function NoChallenge({ onClick }) {
       <Board title="Challenge">
         <Challenge>
           <span>&#128581;</span>
-          <p style={{ margin: '1.2rem 0 1.5rem' }}>아직 진행중인 도전이 없습니다.</p>
-          <Button onClick={onClick} width="30%" title="도전 시작" />
+          <p style={{ margin: '1.2rem 0 2rem' }}>아직 진행중인 도전이 없습니다.</p>
+          <Button onClick={onClick} width="10%" title="도전 시작" />
         </Challenge>
     </Board>
   </div>
