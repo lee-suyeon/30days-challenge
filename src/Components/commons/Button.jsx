@@ -15,6 +15,7 @@ const typeStyle = css`
 `;
 
 const StyledButton = styled.button`
+  width: ${props => props.width || '100%'};
   border-radius: 3px;
   border: 1px solid #4d55ff;
   cursor: pointer;
@@ -23,6 +24,7 @@ const StyledButton = styled.button`
   font-weight: 500;
   padding: 0.45rem 1.2rem;
   transition: 0.2s;
+  outline: none;
 
   &:hover {
     background-color: #4d55ff;

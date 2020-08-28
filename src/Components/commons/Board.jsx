@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BaseBoard = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
