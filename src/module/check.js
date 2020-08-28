@@ -1,5 +1,3 @@
-import initialState from './store/initialState'
-
 export const CHECK_BOX = 'CHECK_BOX';
 export const CANCEL_BOX = 'CANCEL_BOX';
 
@@ -7,9 +5,7 @@ export const CANCEL_BOX = 'CANCEL_BOX';
 export const checkBox = (day) => {
   return {
     type: CHECK_BOX,
-    payload: {
-      day,
-    }
+    day,
   }
 }
 
@@ -20,13 +16,16 @@ export const cancelBox = (day) => {
   }
 }
 
+// 초기 상태
+const initialState = [];
+
 // reducer 선언
-export default function check (state = initialState.check, action){
+export default function check (state = initialState, action){
   switch(action.type){
     case CHECK_BOX: 
-      return state.concat(action.payload);
+      return state.concat(action.day);
     case CANCEL_BOX: 
-      return state.filter(box => box.day !== action.day);
+      return state.filter(day => day !== action.day);
     default:
       return state;
   }
