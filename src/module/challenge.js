@@ -1,6 +1,7 @@
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const START_CHALLENGE = 'START_CHALLENGE';
+export const EDIT_CHALLENGE = 'EDIT_CHALLENGE';
 
 // 액션 생성 함수
 export const showModal = () => {
@@ -11,16 +12,19 @@ export const closeModal = () => {
   return { type: CLOSE_MODAL }
 }
 
-let nextId = 1;
 export const startChallenge = (challengeInfo) => {
   return {
     type: START_CHALLENGE,
     payload : {
-      id: nextId++,
       ...challengeInfo,
     }
   }
 }
+
+export const editChallenge = () => {
+  return { type: EDIT_CHALLENGE }
+}
+
 
 // 초기 상태
 const initialState = {
@@ -45,6 +49,12 @@ export default function challenge (state = initialState, action){
       return {
         ...state,
         challengeInfo: action.payload,
+      }
+    case EDIT_CHALLENGE: 
+      return {
+        ...state,
+        modal: true,
+        edit: true
       }
     default:
       return state;
