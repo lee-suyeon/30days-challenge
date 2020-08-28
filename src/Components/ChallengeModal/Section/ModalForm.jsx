@@ -95,8 +95,8 @@ const ModalForm = ({ history, challengeInfo, onStartChallenge, onCloseModal }) =
   }, [startDate])
 
   useEffect(() => {
-    const { category, goal, reward, startDate, endDate } = challengeInfo;
     if(challengeInfo) {
+      const { category, goal, reward, startDate, endDate } = challengeInfo;
       setCategory(category);
       setGoal(goal);
       setReward(reward);
