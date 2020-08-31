@@ -32,6 +32,9 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         background-color: transparent;
       }
+      a:visited {
+        color: #4d55ff;
+      }
 
 `
 export default GlobalStyle;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Button from '../../commons/Button';
 import Board from '../../commons/Board';
@@ -20,11 +20,12 @@ export const Challenge = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
     color: #333;
-    margin: 1.2rem 0 1rem;
+    margin: 1.8rem 0 1rem;
   }
 `;
 
 function NoChallenge({ onClick }) {
+
   return (
     <div style={{ width: '100%' }}>
       <Board title="Challenge">
