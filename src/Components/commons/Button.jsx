@@ -22,7 +22,7 @@ const StyledButton = styled.button`
   color: #4d55ff;
   font-size: 0.825rem;
   font-weight: 500;
-  padding: 0.45rem 1.2rem;
+  padding: 0.45rem 1rem;
   transition: 0.2s;
   outline: none;
 
