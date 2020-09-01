@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   }
 
   & + & {
-    margin-left: 2%;
+    margin-left: 3%;
   }
 
   ${typeStyle}
