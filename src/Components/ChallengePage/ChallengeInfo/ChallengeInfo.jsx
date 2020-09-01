@@ -3,53 +3,76 @@ import styled from 'styled-components';
 import { Flag } from '@styled-icons/material/Flag'
 import { CalendarToday } from '@styled-icons/material/CalendarToday'
 import { EmojiEvents } from '@styled-icons/material/EmojiEvents'
-import Button from '../../commons/Button';
+import { Edit } from '@styled-icons/material/Edit'
 import Board from '../../commons/Board';
 
 const InfoList = styled.li`
-  margin-bottom: 1.1rem;
-  em {
-    display: block;
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 0.7rem;
-  }
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
   span {
-    display: inline-block;
-    width: 30px;
+    width: 10%;
     text-align: center;
     margin-right: 0.3rem;
   }
+  em {
+    width: 20%;
+    color: #666;
+    font-weight: 500;
+  }
   svg {
-    width: 27px;
+    width: 25px;
     fill: #4d55ff;
     margin-bottom: 0.3rem;
   }
+  p {
+    width: 70%;
+    font-weight: 500;
+  }
+  &:last-child{
+    margin-bottom: 0rem;
+  }
+`
+
+const Category = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  margin: 0 auto;
 `
 
 function ChallengeInfo({ challengeInfo, onEditChallenge }) {
-  const { goal, startDate, endDate, reward } = challengeInfo;
+  const { category, goal, startDate, endDate, reward } = challengeInfo;
 
   return (
     <div style={{ width: '32%', postion: 'relative'}}>
-      <Board title='도전 내용'>
-        <ul style={{ marginTop: '1.5rem' }}>
+      <Board title='도전 내용' icon={<Edit onClick={onEditChallenge}/>}>
+        <Category>
+          <span>{category}</span>
+        </Category>
+        <ul style={{ marginLeft: '1rem' }}>
           <InfoList>
+            <span><Flag/></span>
             <em>목표</em>
-            <p><span><Flag/></span>{goal} </p>
+            <p>{goal} </p>
           </InfoList>
           <InfoList>
+            <span><CalendarToday style={{ width: '21px'}}/></span>
             <em>기간</em>
-            <p><span><CalendarToday style={{ width: '22px'}}/></span>{startDate} ~ {endDate}</p>
+            <p>{startDate} ~ {endDate}</p>
           </InfoList>
           <InfoList>
+            <span><EmojiEvents/></span>
             <em>보상</em>
-            <p><span><EmojiEvents/></span>{reward} </p>
+            <p>{reward} </p>
           </InfoList>
         </ul>
-        <div style={{ textAlign: 'right' }}>
-          <Button title='수정' width="25%" onClick={onEditChallenge}></Button>
-        </div>
       </Board>
     </div>
   )

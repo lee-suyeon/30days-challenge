@@ -1,7 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-// import { Edit } from '@styled-icons/material-outlined/Edit'
-// import { Delete } from '@styled-icons/material-outlined/Delete'
 
 const typeStyle = css`
   ${props =>
@@ -22,7 +20,7 @@ const BaseBoard = styled.div`
   width: 100%;
   height: 380px;
   background: #fff;
-  padding: 2rem;
+  padding: 1.8rem;
   border: 1px solid #ebebeb;
 
   ${typeStyle}
@@ -38,11 +36,10 @@ const Title = styled.div`
 `
 const Icons = styled.div`
   svg {
-    width: 25px;
+    width: 20px;
     fill: #c8c8c8;
     cursor: pointer;
     transition: 0.2s;
-    padding: 0.1rem;
   }
   svg:hover {
     fill: #4d55ff;
