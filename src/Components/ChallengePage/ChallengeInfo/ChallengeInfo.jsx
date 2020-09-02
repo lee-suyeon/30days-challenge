@@ -47,12 +47,17 @@ const Category = styled.div`
   margin: 0 auto;
 `
 
-function ChallengeInfo({ challengeInfo, onEditChallenge }) {
+function ChallengeInfo({ challengeInfo, onEditChallenge, onShowModal }) {
   const { category, goal, startDate, endDate, reward } = challengeInfo;
+
+  const onClickEdit = () => {
+    onEditChallenge();
+    onShowModal();
+  }
 
   return (
     <div style={{ width: '32%', postion: 'relative'}}>
-      <Board title='도전 내용' icon={<Edit onClick={onEditChallenge}/>}>
+      <Board title='도전 내용' icon={<Edit onClick={onClickEdit}/>}>
         <Category>
           <span>{category}</span>
         </Category>
