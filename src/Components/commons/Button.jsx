@@ -2,14 +2,26 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const typeStyle = css`
-  ${props =>
-    props.color === 'primary' &&
+  ${props =>props.color === 'primary' &&
     css`
       background-color: #4d55ff;
       color: #fff;
 
       &:hover {
         background-color: #646bff;
+      }
+    `}
+`;
+
+const sizeStyle = css`
+  ${props => props.size === 'small' &&
+    css`
+      width: 45px;
+      height: 25px;
+      padding: 0.1rem; 
+
+      & + & {
+        margin-left: 5px;
       }
     `}
 `;
@@ -36,6 +48,7 @@ const StyledButton = styled.button`
   }
 
   ${typeStyle}
+  ${sizeStyle}
 `;
 
 const Button = ({ title, ...rest }) => {
