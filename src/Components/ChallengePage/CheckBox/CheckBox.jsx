@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import styled, { css } from 'styled-components';
+import React from 'react'
+import styled from 'styled-components';
 import Board from '../../commons/Board';
-import { useDispatch, useSelector } from 'react-redux';
 import Cell from './Section/Cell';
 
 const CellTable = styled.div`
@@ -22,7 +21,7 @@ const Result = styled.p`
     color: #4d55ff;
   }
 `
-//  done={check.includes(day)} 
+
 const checkNumbers = Array(30).fill().map((v, i) => i + 1);
 
 function CheckBox({ check, onCheckBox, onCancelBox}) {
