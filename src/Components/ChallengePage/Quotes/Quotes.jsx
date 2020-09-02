@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Board from '../../commons/Board';
 import { habitQuotes } from './habitQuotes';
+import { Replay } from '@styled-icons/material-outlined/Replay'
 
 const QuoteCont = styled.div`
   height: 100%;
@@ -25,11 +26,15 @@ const pickUpQuotes = () => {
 }
 
 function Quotes() {
-  const quote = useMemo(() => pickUpQuotes(), []);
+  const [ quote, setQuote ] = useState(pickUpQuotes());
+
+  const ReloadQuote = () => {
+    setQuote(pickUpQuotes());
+  }
 
   return (
     <div style={{ width: '32%', marginTop: '1.5rem' }}>
-      <Board title='오늘의 명언'>
+      <Board title='오늘의 명언' icon={<Replay onClick={ReloadQuote}/>}>
         <QuoteCont>
           <p>{quote.quote}</p>
           <em>- {quote.author} -</em>
