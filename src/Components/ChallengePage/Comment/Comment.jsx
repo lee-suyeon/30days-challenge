@@ -1,10 +1,11 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Board from '../../commons/Board';
-import { AssignmentLate } from '@styled-icons/material-outlined/AssignmentLate';
-import { Close } from '@styled-icons/material-outlined/Close'
 import CommentList from './Sections/CommentList';
 import CommentForm from './Sections/CommentForm';
+import PopConfirm from '../../commons/PopConfirm';
+import { AssignmentLate } from '@styled-icons/material-outlined/AssignmentLate';
+import { Delete } from '@styled-icons/material-outlined/Delete';
 
 const Layout = styled.div`
   display: flex;
@@ -27,11 +28,26 @@ const NoComment = styled.div`
   }
 `
 
-function Comment({ today, commentData, onPostComment, onDeleteComment}) {
+function Comment({ today, commentData, onPostComment, onDeleteComment, onDeleteAll }) {
+  const [ confirm, setConfirm ] = useState(false);
+
+  const onToggleConfirm = () => {
+    setConfirm(prev => !prev)
+  }
+  
+  const onConfirm = () => {
+    onDeleteAll();
+    setConfirm(prev => !prev);
+  }
+
   return (
     <div style={{ width: '66%' , marginTop: '1.5rem' }}>
-     <Board title="한줄 코멘트">
-
+      <Board title="한줄 코멘트" icon={<Delete onClick={onToggleConfirm}/>}>
+        {confirm && 
+          <PopConfirm 
+            onCancel={onToggleConfirm}
+            onConfirm={onConfirm}
+          />}
         <Layout>
           {commentData.length === 0 
             ? <NoComment>
@@ -47,7 +63,6 @@ function Comment({ today, commentData, onPostComment, onDeleteComment}) {
             </ul>}
         </Layout>
         <CommentForm onPostComment={onPostComment}/>
-        
       </Board> 
     </div>
   );
