@@ -20,7 +20,7 @@ export const deleteComment = (id) => {
   }
 }
 
-export const deleteAll = () => {
+export const deleteAllComment = () => {
   return { type: DELETE_ALL }
 }
 

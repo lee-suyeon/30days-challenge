@@ -28,7 +28,7 @@ const NoComment = styled.div`
   }
 `
 
-function Comment({ today, commentData, onPostComment, onDeleteComment, onDeleteAll }) {
+function Comment({ today, commentData, onPostComment, onDeleteComment, onDeleteAllComment }) {
   const [ confirm, setConfirm ] = useState(false);
 
   const onToggleConfirm = () => {
@@ -36,15 +36,16 @@ function Comment({ today, commentData, onPostComment, onDeleteComment, onDeleteA
   }
   
   const onConfirm = () => {
-    onDeleteAll();
+    onDeleteAllComment();
     setConfirm(prev => !prev);
   }
 
   return (
-    <div style={{ width: '66%' , marginTop: '1.5rem' }}>
+    <div style={{ width: '66%' , marginTop: '1.5rem' }} >
       <Board title="한줄 코멘트" icon={<Delete onClick={onToggleConfirm}/>}>
         {confirm && 
-          <PopConfirm 
+          <PopConfirm
+            message='작성된 코멘트를 모두 삭제하시겠습니까?'
             onCancel={onToggleConfirm}
             onConfirm={onConfirm}
           />}

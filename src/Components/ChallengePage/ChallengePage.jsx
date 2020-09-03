@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { editChallenge } from '../../module/challenge';
-import { postComment, deleteComment, deleteAll } from '../../module/comments'
+import { postComment, deleteComment, deleteAllComment } from '../../module/comments'
 import { checkBox, cancelBox } from '../../module/check'
 import { showModal } from '../../module/modal'; 
 import ChallengeInfo from './ChallengeInfo/ChallengeInfo';
@@ -32,7 +32,7 @@ function ChallengePage() {
   const commentData = useSelector(state => state.comments);
   const onPostComment = (content) => dispatch(postComment(content));
   const onDeleteComment = (id) => dispatch(deleteComment(id));
-  const onDeleteAll = () => dispatch(deleteAll());
+  const onDeleteAllComment = () => dispatch(deleteAllComment());
 
   // check
   const check = useSelector(state => state.check);
@@ -61,7 +61,7 @@ function ChallengePage() {
           commentData={commentData}
           onPostComment={onPostComment}
           onDeleteComment={onDeleteComment}
-          onDeleteAll={onDeleteAll}
+          onDeleteAllComment={onDeleteAllComment}
         />
         <Quotes />
       </Col>
