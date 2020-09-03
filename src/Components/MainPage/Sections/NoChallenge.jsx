@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Button from '../../commons/Button';
 import Board from '../../commons/Board';
@@ -24,7 +24,7 @@ export const Challenge = styled.div`
   }
 `;
 
-function NoChallenge({ onClick }) {
+function NoChallenge({ onShowModal }) {
 
   return (
     <div style={{ width: '100%' }}>
@@ -32,7 +32,7 @@ function NoChallenge({ onClick }) {
         <Challenge>
           <span>&#128581;</span>
           <p style={{ margin: '1.2rem 0 2rem' }}>아직 진행중인 도전이 없습니다.</p>
-          <Button onClick={onClick} width="10%" title="도전 시작" />
+          <Button onClick={onShowModal} width="10%" title="도전 시작" />
         </Challenge>
     </Board>
   </div>
