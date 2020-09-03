@@ -36,12 +36,12 @@ const ButtonGroup = styled.div`
   justify-content: flex-end;
 `
 
-function PopConfirm({ onCancel, onConfirm }) {
+function PopConfirm({ onCancel, onConfirm, message }) {
   return (
     <Position>
       <MessageBlock>
         <div style={{ padding: '0.5rem 0.5rem 1rem'}}>
-          <p><Error /> 작성된 코멘트를 모두 삭제하시겠습니까? </p>
+          <p><Error /> {message}</p>
         </div>
         <ButtonGroup>
           <Button title="취소" size='small' onClick={onCancel}/>
