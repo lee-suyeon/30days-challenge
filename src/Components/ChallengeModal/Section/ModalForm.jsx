@@ -66,7 +66,7 @@ const getAfter30days = (date) => {
   return convertDateString(inputDate);
 }
 
-const ModalForm = ({ history, challengeInfo, onStartChallenge, onCloseModal }) => {
+const ModalForm = ({ history, challengeInfo, onStartChallenge, onCloseModal, edit }) => {
   const today = useMemo(() => convertDateString(new Date), []);
   const [ category, setCategory ] = useState(categoryOptions[0].emoji);
   const [ goal, setGoal ] = useState('');
@@ -95,7 +95,7 @@ const ModalForm = ({ history, challengeInfo, onStartChallenge, onCloseModal }) =
   }, [startDate])
 
   useEffect(() => {
-    if(challengeInfo) {
+    if(edit) {
       const { category, goal, reward, startDate, endDate } = challengeInfo;
       setCategory(category);
       setGoal(goal);
@@ -157,6 +157,7 @@ const ModalForm = ({ history, challengeInfo, onStartChallenge, onCloseModal }) =
             value={startDate}
             onChange={onChangeDate}
             style={{ width: '40%' }}
+            disabled={edit}
           ></input>
           <p style={{ fontSize: '0.75rem', marginLeft: '0.8rem'}}>도전 종료일은 
             <span style={{ color: '#4d55ff', fontWeight: '500' }}> {endDate}</span> 입니다.

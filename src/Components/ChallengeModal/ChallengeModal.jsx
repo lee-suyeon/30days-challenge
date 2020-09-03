@@ -1,9 +1,10 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Close } from '@styled-icons/material/Close';
-import { useDispatch, useSelector } from 'react-redux'
-import { closeModal, startChallenge } from '../../module/challenge';
+import { useDispatch } from 'react-redux'
+import { closeModal } from '../../module/modal';
+import { startChallenge } from '../../module/challenge';
 import ModalForm from './Section/ModalForm'
 
 const ModalOverlay = styled.div`
@@ -43,7 +44,7 @@ const CloseButton = styled(Close)`
   cursor: pointer;
 `;
 
-const ChallengeModal = ({ title, challengeInfo }) => {
+const ChallengeModal = ({ title, challengeInfo, edit }) => {
   const dispatch = useDispatch();
 
   const onStartChallenge = (challengeInfo) => dispatch(startChallenge(challengeInfo));
@@ -61,6 +62,7 @@ const ChallengeModal = ({ title, challengeInfo }) => {
             onStartChallenge={onStartChallenge}
             onCloseModal={onCloseModal}
             challengeInfo={challengeInfo}
+            edit={edit}
           />
         </ModalBlock>
       </ModalOverlay>
