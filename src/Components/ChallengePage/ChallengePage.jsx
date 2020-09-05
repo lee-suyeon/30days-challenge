@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { editChallenge } from '../../module/challenge';
 import { postComment, deleteComment, deleteAllComment } from '../../module/comments'
-import { checkBox, cancelBox } from '../../module/check'
+import { checkBox, cancelBox, checkState } from '../../module/check'
 import { showModal } from '../../module/modal'; 
 import ChallengeInfo from './ChallengeInfo/ChallengeInfo';
 import ProgressInfo from './ProgressInfo/ProgressInfo';
@@ -38,6 +38,7 @@ function ChallengePage() {
   const check = useSelector(state => state.check);
   const onCheckBox = (day) => dispatch(checkBox(day));
   const onCancelBox = (day) => dispatch(cancelBox(day));
+  const onCheckState = (label, day) => dispatch(checkState(label, day));
 
   return (
     <div>
@@ -49,6 +50,7 @@ function ChallengePage() {
         />
         <CheckBox 
           check={check}
+          onCheckState={onCheckState}
           onCheckBox={onCheckBox}
           onCancelBox={onCancelBox}
         />

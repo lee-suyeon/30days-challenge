@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import Board from '../../commons/Board';
 import Cell from './Section/Cell';
+import CheckList from './Section/CheckList';
+import { MoreHoriz } from '@styled-icons/material/MoreHoriz';
 
 const CellTable = styled.div`
   width: 100%;
@@ -24,22 +26,35 @@ const Result = styled.p`
 
 const checkNumbers = Array(30).fill().map((v, i) => i + 1);
 
-function CheckBox({ check, onCheckBox, onCancelBox}) {
+function CheckBox({ check, onCheckBox, onCancelBox, onCheckState}) {
   const count = check.length;
+  const [ good, setGood ] = useState([]);
+  const [ soso, setSoso ] = useState([]);
+  const [ bad, setBad ] = useState([]);
+
+  const onClickCell = (label, day) => {
+    if(label === 'good'){
+      setGood(good.concat(day));
+    }
+  }
+  
+  console.log(good);
 
   return (
     <div style={{ width: '32%' }}>
       <Board
         title="체크 박스"
+        // icon={<MoreHoriz onClick={onClickMenu}/>}
         >
         <CellTable>
           {checkNumbers
             .map((day, i) => 
               <Cell key={`day${i + 1}`} day={day}
-                done={check.includes(day)} 
+                onCheckState={onCheckState}
                 onCheckBox={onCheckBox}
                 onCancelBox={onCancelBox}
-              />)}
+              /> 
+              )}
         </CellTable>
         <Result><em>{count < 10 ? `0${count}` : count}</em> / 30</Result>
       </Board>

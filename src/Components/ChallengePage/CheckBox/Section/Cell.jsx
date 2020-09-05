@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import { Done } from '@styled-icons/material/Done'
+import { useSelector, useDispatch } from 'react-redux';
+import { showModal, closeModal } from '../../../../module/modal';
+
+import CheckList from './CheckList';
 
 const NumberBox = styled.div`
+  position: relative;
   flex-basis: 14%;
   width: 42px;
   height: 42px;
@@ -14,27 +19,23 @@ const NumberBox = styled.div`
   text-align: center;
   cursor: pointer;
   margin: 0 5px 5px 0;
-
-  svg {
-    width: 25px;
-  }
 `
 
-function Cell ({ day, done, onCheckBox, onCancelBox }) {
+function Cell ({ day, done, onCheckBox, onCancelBox, onClickLocal, onCheckState }) {
+  const dispatch = useDispatch();
+  const [ visible, setVisible ] = useState(false);
 
-  const onClickCell = (day) => {
-    if(done) {
-      onCancelBox(day)
-    } else {
-      onCheckBox(day)
-    }
+  const onPopup = () => {
+    setVisible(prev => !prev);
   }
 
   return (
     <>
       <NumberBox 
-      onClick={() => onClickCell(day)} done={done}
-      >{done ? <Done /> : day}</NumberBox>
+      onClick={onPopup} done={done}
+      >{done ? <Done style={{ width: '25px' }}/> : day}
+        {visible && <CheckList day={day} onCheckState={onCheckState}/>}
+      </NumberBox>
     </>
   )
 }
