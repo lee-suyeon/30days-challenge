@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 30days-challenge
+![30days](https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/favicon2.png?raw=true "30days") https://lee-suyeon.github.io/30days-challenge/
 
-In the project directory, you can run:
+* 누구나 해야한다고 생각하는 일을 실천에 옮기는 일은 어렵습니다.
+나의 변화과정을 기록하고 확인하여 동기부여에 도움이 될 수 있도록
+하나의 습관을 만들기 위해 30days-challenge를 기획했습니다.
+<br />
 
-### `yarn start`
+* skill
+  - react
+  - redux
+  - styled-component
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<br />
+1.  초기화면   
+<img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/1.JPG?raw=true" width="600px" alt="초기화면"></img>
 
-### `yarn test`
+<br />
+<br />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 도전 시작
+<img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/2.JPG?raw=true" width="600px" alt="도전 시작"></img>
 
-### `yarn build`
+<br />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. 챌린지 대시보드
+<img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/3.png?raw=true" width="600px" alt="챌린지"></img>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3-1. 도전 내용, 체크 박스, 진행 상황
+<img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/4.JPG?raw=true" width="600px" alt="대시보드"></img>
 
-### `yarn eject`
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+3-2. 한 줄 코멘트, 오늘의 명언
+<img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/5.JPG?raw=true" width="600px" alt="대시보드"></img>
