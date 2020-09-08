@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import Board from '../../commons/Board';
 import Cell from './Section/Cell';
-import CheckList from './Section/CheckList';
-import { MoreHoriz } from '@styled-icons/material/MoreHoriz';
 
 const CellTable = styled.div`
   width: 100%;
@@ -26,33 +24,20 @@ const Result = styled.p`
 
 const checkNumbers = Array(30).fill().map((v, i) => i + 1);
 
-function CheckBox({ check, onCheckBox, onCancelBox, onCheckState}) {
-  const count = check.length;
-  const [ good, setGood ] = useState([]);
-  const [ soso, setSoso ] = useState([]);
-  const [ bad, setBad ] = useState([]);
-
-  const onClickCell = (label, day) => {
-    if(label === 'good'){
-      setGood(good.concat(day));
-    }
-  }
-  
-  console.log(good);
+function CheckBox({ check, onCheckBox }) {
+  const count = check.cellData.filter(day => day != null).length;
 
   return (
     <div style={{ width: '32%' }}>
-      <Board
-        title="체크 박스"
-        // icon={<MoreHoriz onClick={onClickMenu}/>}
-        >
+      <Board title="체크 박스">
         <CellTable>
           {checkNumbers
             .map((day, i) => 
-              <Cell key={`day${i + 1}`} day={day}
-                onCheckState={onCheckState}
+              <Cell 
+                key={`day${i + 1}`} 
+                day={day}
+                cellData={check.cellData}
                 onCheckBox={onCheckBox}
-                onCancelBox={onCancelBox}
               /> 
               )}
         </CellTable>

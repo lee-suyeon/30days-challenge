@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components';
-import { Done } from '@styled-icons/material/Done'
-import { ChangeHistory } from '@styled-icons/material/ChangeHistory'
-import { Close } from '@styled-icons/material/Close'
 
 const Position = styled.div`
   position: absolute;
@@ -54,21 +51,13 @@ const Icon = styled.div`
   }
 `
 
-const checkCategory = [
-  { value: 0, icon: <Done />, label: 'good', color: '#4d55ff' },
-  { value: 1, icon: <ChangeHistory />, label: 'soso', color: '#70a1ff'},
-  { value: 2, icon: <Close />, label: 'bad', color: '#eb4d4b'},
-]
-
-function CheckList({ day, onCheckState }) {
-  const [ localVisible, setLocalVisible ] = useState(false);
-
+function CheckList({ day, onCheckBox, checkCategory }) {
   const onClickCheck = (label) => {
-    onCheckState(label, day)
+    onCheckBox(label, day)
   }
 
   return (
-    <Position>
+    <Position>      
       <ListBlock>
         <ul style={{ display: 'flex'}}>
           {checkCategory.map(v => 
