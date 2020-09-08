@@ -14,26 +14,26 @@
 
 
 <br />
-1.  초기화면   
+1.  초기화면      
 <img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/1.JPG?raw=true" width="600px" alt="초기화면"></img>
 
 <br />
 <br />
 
-2. 도전 시작
+2. 도전 시작   
 <img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/2.JPG?raw=true" width="600px" alt="도전 시작"></img>
 
 <br />
 
-3. 챌린지 대시보드
+3. 챌린지 대시보드   
 <img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/3.png?raw=true" width="600px" alt="챌린지"></img>
 
 <br />
 
-3-1. 도전 내용, 체크 박스, 진행 상황
+3-1. 도전 내용, 체크 박스, 진행 상황   
 <img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/4.JPG?raw=true" width="600px" alt="대시보드"></img>
 
 <br />
 
-3-2. 한 줄 코멘트, 오늘의 명언
+3-2. 한 줄 코멘트, 오늘의 명언   
 <img src="https://github.com/lee-suyeon/30days-challenge/blob/master/screenshot/5.JPG?raw=true" width="600px" alt="대시보드"></img>
