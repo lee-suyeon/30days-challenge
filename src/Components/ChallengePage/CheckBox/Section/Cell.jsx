@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
 import { Done } from '@styled-icons/material/Done'
 import { ChangeHistory } from '@styled-icons/material/ChangeHistory'
 import { Close } from '@styled-icons/material/Close'
@@ -69,8 +68,18 @@ function Cell ({ day, cellData, onCheckBox }) {
   const [ visible, setVisible ] = useState(false);
 
   const onPopup = () => {
-    setVisible(prev => !prev);
+    setVisible(true);
   }
+
+  const onClose = () => {
+    setVisible(false);
+  }
+
+  useEffect(() => {
+    if(visible){
+      window.addEventListener('click', onClose);
+    }
+  }, [visible]);
 
   return (
     <>
