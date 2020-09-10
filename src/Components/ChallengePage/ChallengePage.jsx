@@ -52,7 +52,7 @@ function ChallengePage() {
         />
         <ProgressInfo
           challengeInfo={challengeInfo}
-          check={check}
+          cellData={check.cellData}
         />
         <Comment 
           today={challengeInfo.today}
