@@ -67,7 +67,8 @@ const getAfter30days = (date) => {
 }
 
 const ModalForm = ({ history, challengeInfo, onStartChallenge, onCloseModal, edit }) => {
-  const today = useMemo(() => convertDateString(new Date), []);
+  let date = new Date();
+  const today = useMemo(() => convertDateString(date), [date.getDate()]);
   const [ category, setCategory ] = useState(categoryOptions[0].emoji);
   const [ goal, setGoal ] = useState('');
   const [ reward, setReward ] = useState('');
