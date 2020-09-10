@@ -49,9 +49,7 @@ const daysBetween = (d1, d2) => {
 function ProgressInfo({ cellData, challengeInfo }) {
   const { today, endDate, startDate } = challengeInfo;
   const [ visible, setVisible ] = useState(false);
-  const progressRate = cellData.filter(v => v != null ).length / 30 * 100
-
-  console.log(daysBetween(startDate, today));
+  const progressRate = cellData && cellData.filter(v => v != null ).length / 30 * 100
 
   const onClickIcon = () => {
     setVisible(prev => !prev)
