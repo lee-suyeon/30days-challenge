@@ -25,7 +25,7 @@ const Result = styled.p`
 const checkNumbers = Array(30).fill().map((v, i) => i + 1);
 
 function CheckBox({ check, onCheckBox }) {
-  const count = check.cellData.filter(day => day != null).length;
+    const count = check.cellData ? check.cellData.filter(day => day != null).length : '0';
 
   return (
     <div style={{ width: '32%' }}>

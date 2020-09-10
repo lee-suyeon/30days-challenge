@@ -25,6 +25,7 @@ const Current = styled.div`
 function Analysis ({ cellData }) { 
 
   const getLength = (label) => {
+    if(!cellData) return;
     return cellData.filter(v => v === label).length;
   }
 
