@@ -24,22 +24,22 @@ const Result = styled.p`
 
 const checkNumbers = Array(30).fill().map((v, i) => i + 1);
 
-function CheckBox({ check, onCheckBox, onCancelBox}) {
-  const count = check.length;
+function CheckBox({ check, onCheckBox }) {
+  const count = check.cellData.filter(day => day != null).length;
 
   return (
     <div style={{ width: '32%' }}>
-      <Board
-        title="체크 박스"
-        >
+      <Board title="체크 박스">
         <CellTable>
           {checkNumbers
             .map((day, i) => 
-              <Cell key={`day${i + 1}`} day={day}
-                done={check.includes(day)} 
+              <Cell 
+                key={`day${i + 1}`} 
+                day={day}
+                cellData={check.cellData}
                 onCheckBox={onCheckBox}
-                onCancelBox={onCancelBox}
-              />)}
+              /> 
+              )}
         </CellTable>
         <Result><em>{count < 10 ? `0${count}` : count}</em> / 30</Result>
       </Board>
