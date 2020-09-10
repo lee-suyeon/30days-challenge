@@ -5,8 +5,7 @@ import { ChangeHistory } from '@styled-icons/material/ChangeHistory'
 import { Close } from '@styled-icons/material/Close'
 import CheckList from './CheckList';
 
-const cellStyle = css`
-
+export const cellStyle = css`
   ${props =>props.state === 'good' &&
     css`
       background-color: #4d55ff;
@@ -58,7 +57,7 @@ const getIcon = (state) => {
  }
 }
 
-const checkCategory = [
+export const checkCategory = [
   { value: 0, icon: <Done />, label: 'good', color: '#4d55ff' },
   { value: 1, icon: <ChangeHistory />, label: 'soso', color: '#70a1ff'},
   { value: 2, icon: <Close />, label: 'bad', color: '#eb4d4b'},
