@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/30days-challenge/static/js/main.c3fde6f6.chunk.js",
-    "main.js.map": "/30days-challenge/static/js/main.c3fde6f6.chunk.js.map",
+    "main.js": "/30days-challenge/static/js/main.caeb9a1c.chunk.js",
+    "main.js.map": "/30days-challenge/static/js/main.caeb9a1c.chunk.js.map",
     "runtime-main.js": "/30days-challenge/static/js/runtime-main.174b5012.js",
     "runtime-main.js.map": "/30days-challenge/static/js/runtime-main.174b5012.js.map",
     "static/js/2.b1103cbd.chunk.js": "/30days-challenge/static/js/2.b1103cbd.chunk.js",
     "static/js/2.b1103cbd.chunk.js.map": "/30days-challenge/static/js/2.b1103cbd.chunk.js.map",
     "index.html": "/30days-challenge/index.html",
-    "precache-manifest.f2f18ef64b4318542df449ab4a199b36.js": "/30days-challenge/precache-manifest.f2f18ef64b4318542df449ab4a199b36.js",
+    "precache-manifest.c19af26482c4bb54061f9f48f15563a3.js": "/30days-challenge/precache-manifest.c19af26482c4bb54061f9f48f15563a3.js",
     "service-worker.js": "/30days-challenge/service-worker.js",
     "static/js/2.b1103cbd.chunk.js.LICENSE.txt": "/30days-challenge/static/js/2.b1103cbd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.174b5012.js",
     "static/js/2.b1103cbd.chunk.js",
-    "static/js/main.c3fde6f6.chunk.js"
+    "static/js/main.caeb9a1c.chunk.js"
   ]
 }
